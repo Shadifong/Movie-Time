@@ -27,15 +27,35 @@ export class MainComponent implements OnInit {
       console.log(state.Movies.data.results);
       this.movies = state.Movies.data.results;
     });
-    console.log('this.movies', this.movies);
 
     $(document).ready(function() {
       $.noConflict();
       setTimeout(function() {
+        $('#MoviesDataTable thead tr').clone(true).appendTo( '#MoviesDataTable thead' );
+        $('#MoviesDataTable thead tr:eq(1) th').each( function (i) {
+            var title = $(this).text();
+            $(this).html(`<input type="text" value="" id=${title}  placeholder="Search ${title}" />` );
+            $( 'input', this ).on( 'keyup change', function () {
+              if ( table.column(i).search() !== $('#' + title).val()) {
+                var valueOfSearch = $('#' + title).val();
+                if(this.id.includes("placeholder")){
+                  $(`${this.id}`).css({'display':'none'});
+                }
+                table
+                    .column(i)
+                    .search(String( valueOfSearch))
+                    .draw();
+            }
+          } );
+      } );
+     
+    //  .css({'display':'none'}));
+  //  $('#placeholder="Search"').val("ayy")
         var table = $('#MoviesDataTable').DataTable({
           data: this.movies,
           pageLength: 10,
           processing: true,
+          orderCellsTop: true,
           columns: [
             {
               orderable: false,
@@ -79,6 +99,7 @@ export class MainComponent implements OnInit {
             tr.addClass('shown');
           }
         });
+
       }, 50);
     });
   }
