@@ -56,6 +56,6 @@ td {
   margin-top: 2%;
   margin-bottom: 1%;
 }
-th input[type=text]:nth-child(1) {
-  background-color:red;
+th input[type=text]:nth-child(0) {
+  display: none;
 }

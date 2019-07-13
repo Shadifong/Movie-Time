@@ -32,15 +32,14 @@ export class MainComponent implements OnInit {
       $.noConflict();
       setTimeout(function() {
         $('#MoviesDataTable thead tr').clone(true).appendTo( '#MoviesDataTable thead' );
+        // Creating Inputs For Each table row
         $('#MoviesDataTable thead tr:eq(1) th').each( function (i) {
             var title = $(this).text();
             $(this).html(`<input type="text" value="" id=${title}  placeholder="Search ${title}" />` );
+            // Search Functionality
             $( 'input', this ).on( 'keyup change', function () {
               if ( table.column(i).search() !== $('#' + title).val()) {
                 var valueOfSearch = $('#' + title).val();
-                if(this.id.includes("placeholder")){
-                  $(`${this.id}`).css({'display':'none'});
-                }
                 table
                     .column(i)
                     .search(String( valueOfSearch))
@@ -50,7 +49,7 @@ export class MainComponent implements OnInit {
       } );
      
     //  .css({'display':'none'}));
-  //  $('#placeholder="Search"').val("ayy")
+    // $('placeholder="Search').val("ayy")
         var table = $('#MoviesDataTable').DataTable({
           data: this.movies,
           pageLength: 10,
