@@ -280,12 +280,14 @@ table.dataTable td {
   zoom: 1;
 }
 .dataTables_wrapper .dataTables_length {
-  float: left;
+  text-align: center;
+  float:left;
+  margin-top: 2%;
 }
 .dataTables_wrapper .dataTables_filter {
-  display: flex;
-  justify-content: center;
-  margin-left: 25% !important;
+  margin-top: 2%;
+  float:right;
+  text-align: center;
 }
 .dataTables_wrapper .dataTables_filter input {
   margin-left: 0.5em;
