@@ -1,0 +1,58 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.css';
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 2rem;
+}
+
+*/ .paginate_button {
+  border-radius: 0 !important;
+}
+
+.warning {
+}
+
+td:first-child {
+  background: url('https://datatables.net/examples/resources/details_open.png')
+    no-repeat center center;
+  cursor: pointer;
+}
+
+tr.shown td:first-child {
+  background: url('https://datatables.net/examples/resources/details_close.png')
+    no-repeat center center;
+}
+th,
+td {
+  white-space: nowrap;
+}
+
+.red {
+  color: red;
+}
+
+#MoviesDataTable {
+  margin-top: 10%;
+  max-width: 90% !important;
+  width: 90% !important;
+}
+.breakrow {
+  max-width: 90% !important;
+  width: 90% !important;
+}
+.table-reponsive {
+  margin-top: 2%;
+  background: white;
+  color: black;
+}
+.mainTitle {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}

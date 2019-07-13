@@ -1,0 +1,25 @@
+<div class="mainTitle">Movies Table Search</div>
+<div class="table-reponsive box col-sm-10 center" id="main">
+  <table id="MoviesDataTable" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Vote Average</th>
+        <th>Year</th>
+        <th style="display: none"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies" class="breakrow">
+        <td></td>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.vote_average }}</td>
+        <td>{{ movie.release_date.slice(0, 4) }}</td>
+        <td style="display: none">{{ movie.overview }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
