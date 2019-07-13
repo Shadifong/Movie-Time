@@ -34,10 +34,13 @@ export class MainComponent implements OnInit {
         $('#MoviesDataTable thead tr').clone(true).appendTo( '#MoviesDataTable thead' );
         // Creating Inputs For Each table row
         $('#MoviesDataTable thead tr:eq(1) th').each( function (i) {
+        
             var title = $(this).text();
-            $(this).html(`<input type="text" value="" id=${title}  placeholder="Search ${title}" />` );
+            $(this).html(`<input type="text" name=${title} value="" id=${title}  placeholder="Search ${title}" />` );
             // Search Functionality
             $( 'input', this ).on( 'keyup change', function () {
+               //  table.column(0).to$().css({'display':'none'})
+              //  $('input[name=value=""]').css({'display':'none'})
               if ( table.column(i).search() !== $('#' + title).val()) {
                 var valueOfSearch = $('#' + title).val();
                 table
@@ -45,6 +48,7 @@ export class MainComponent implements OnInit {
                     .search(String( valueOfSearch))
                     .draw();
             }
+
           } );
       } );
      
