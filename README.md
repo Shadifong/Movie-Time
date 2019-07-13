@@ -3,15 +3,19 @@
  A small movie app developed with Angular, The app displays an updated list of popular movies, and gives additional movies information when             a movie on the movie table is clicked.
 
 ## Installion
-Clone the rep with:
+* Clone the rep with:
 ``` git clone https://github.com/Shadirayan/Movie-Time.git```
-If you don't have AngularCLI then install it globally with
+
+* If you don't have AngularCLI then install it globally with
 ```npm install -g @angular/cli ```
-Then enter the Project's directory using:
+
+* Then enter the Project's directory using:
 ```cd Movie-Time ```
-Then you have to install npm(node package manager) with:
+
+* Then you have to install npm(node package manager) with:
 ``` npm install ```
-Then you have to serve(run the application) with:
+
+* Then you have to serve(run the application) with:
 ``` ng serve ```
 
 
