@@ -20,7 +20,7 @@
 
 
 
-## Tools & Technologies we used
+## Tools & Technologies used
 
 
 * Github - For hosting the code.
